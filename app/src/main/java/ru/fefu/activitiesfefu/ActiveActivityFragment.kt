@@ -24,6 +24,22 @@ class ActiveActivityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Получаем переданные данные
+        arguments?.let { args ->
+            val activityType = args.getString("activityType", "")
+            val distance = args.getFloat("distance", 0f)
+            val durationMillis = args.getLong("durationMillis", 0L)
+            
+            binding.activityType.text = activityType
+            binding.activityDistance.text = String.format("%.1f км", distance)
+            
+            // Конвертируем миллисекунды в формат HH:MM:SS
+            val hours = (durationMillis / (1000 * 60 * 60)).toInt()
+            val minutes = ((durationMillis % (1000 * 60 * 60)) / (1000 * 60)).toInt()
+            val seconds = ((durationMillis % (1000 * 60)) / 1000).toInt()
+            binding.activityDuration.text = String.format("%02d:%02d:%02d", hours, minutes, seconds)
+        }
+
         val finishButton = view.findViewById<com.google.android.material.button.MaterialButton>(R.id.finish_button)
         finishButton.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)

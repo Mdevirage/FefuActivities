@@ -56,13 +56,13 @@ class NewActivityFragment : Fragment() {
         // Обработка клика по кнопке "Начать"
         binding.startButton.setOnClickListener {
             selectedActivityType?.let { type ->
-                lifecycleScope.launch(Dispatchers.IO) {
-                    val random = Random(System.currentTimeMillis())
-                    val startDate = Date()
-                    val durationMillis = random.nextLong(600000, 3600000) // 10 mins - 1 hour
-                    val endDate = Date(startDate.time + durationMillis)
-                    val distance = random.nextFloat() * 10 // Random distance up to 10 km
+                val random = Random(System.currentTimeMillis())
+                val startDate = Date()
+                val durationMillis = random.nextLong(600000, 3600000) // 10 mins - 1 hour
+                val endDate = Date(startDate.time + durationMillis)
+                val distance = random.nextFloat() * 10 // Random distance up to 10 km
 
+                lifecycleScope.launch(Dispatchers.IO) {
                     // Получаем userId из SharedPreferences
                     val userId = requireContext()
                         .getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
@@ -75,7 +75,6 @@ class NewActivityFragment : Fragment() {
                         }
                         return@launch
                     }
-
 
                     val newActivity = ActivityEntity(
                         id = 0, // Room will auto-generate id
@@ -93,6 +92,8 @@ class NewActivityFragment : Fragment() {
                 val fragment = ActiveActivityFragment()
                 fragment.arguments = Bundle().apply {
                     putString("activityType", type.displayName)
+                    putFloat("distance", distance)
+                    putLong("durationMillis", durationMillis)
                 }
                 parentFragmentManager.beginTransaction()
                     .setReorderingAllowed(true)
