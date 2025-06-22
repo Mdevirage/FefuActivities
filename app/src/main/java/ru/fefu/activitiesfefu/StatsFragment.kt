@@ -47,7 +47,6 @@ class StatsFragment : BaseActivityListFragment() {
 
         activityListAdapter?.submitList(items)
     }
-
     private fun formatDuration(millis: Long): String {
         val hours = millis / (1000 * 60 * 60)
         val minutes = (millis % (1000 * 60 * 60)) / (1000 * 60)

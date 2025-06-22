@@ -7,8 +7,6 @@
     android:fitsSystemWindows="true">
 
     <!-- 1. Карта с процентной высотой -->
-
-
     <View
         android:id="@+id/map_placeholder"
         android:layout_width="0dp"
