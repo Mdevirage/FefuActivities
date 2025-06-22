@@ -1,12 +1,10 @@
 package ru.fefu.activitiesfefu
 
 import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import ru.fefu.activitiesfefu.data.ActivityDao
-import ru.fefu.activitiesfefu.data.ActivityType
+
 
 class StatsFragment : BaseActivityListFragment() {
 

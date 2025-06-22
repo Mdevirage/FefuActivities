@@ -36,7 +36,7 @@
             android:id="@+id/activity_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Качели"
+            android:text=""
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="?attr/colorOnBackground"/>
@@ -53,7 +53,7 @@
                 android:id="@+id/activity_distance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="21 км"
+                android:text=""
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="?attr/colorOnBackground"/>
@@ -67,7 +67,7 @@
                 android:id="@+id/activity_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00:05:45"
+                android:text="00:00:00"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="?attr/colorOnBackground"/>
