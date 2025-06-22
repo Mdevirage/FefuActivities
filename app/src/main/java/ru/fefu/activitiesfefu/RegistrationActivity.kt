@@ -41,10 +41,16 @@ class RegistrationActivity : AppCompatActivity() {
             val name = binding.etName.text.toString().trim()
             val email = binding.etLogin.text.toString().trim()
             val password = binding.etPass.text.toString()
+            val repeatPassword = binding.etRepeat.text.toString()
             val gender = binding.actGender.text.toString()
 
-            if (name.isBlank() || email.isBlank() || password.isBlank() || gender.isBlank()) {
+            if (name.isBlank() || email.isBlank() || password.isBlank() || repeatPassword.isBlank() || gender.isBlank()) {
                 Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (password != repeatPassword) {
+                Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
