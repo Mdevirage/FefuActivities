@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextHeadlineBold"
+        parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextSubtitle"
+        parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/android:textColorSecondary</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Widget.My.Button" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Widget.My.IconCircleButton" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="iconTint">?attr/colorOnPrimary</item>
+        <item name="iconSize">28dp</item>
+
+        <item name="cornerRadius">100dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:padding">0dp</item>
+        <item name="iconPadding">0dp</item>
+    </style>
+
+    <style name="Widget.My.IconCircleButton.Primary" parent="Widget.My.IconCircleButton">
+        <item name="android:backgroundTint">#E5E0FF</item>
+        <item name="iconTint">#4317EB</item>
+    </style>
+
+    <style name="Widget.My.IconCircleButton.Accent" parent="Widget.My.IconCircleButton">
+        <item name="android:backgroundTint">#4317EB</item>
+        <item name="iconTint">@android:color/white</item>
+    </style>
+
+    <style name="MyEditTextStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="android:textColorHint">@color/gray_hint</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+
+</resources>
